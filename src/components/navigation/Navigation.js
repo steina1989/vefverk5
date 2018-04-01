@@ -10,7 +10,7 @@ export default class Navigation extends Component {
   render() {
     return (
       <nav className="navigation">
-        <p>útfæra</p>
+        <p>navigation</p>
       </nav>
     );
   }
