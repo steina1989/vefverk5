@@ -12,7 +12,7 @@ export default class Home extends Component {
 
     return (
       <div className="home">
-        <p>útfæra</p>
+        <p>Home</p>
       </div>
     );
   }

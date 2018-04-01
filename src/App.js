@@ -25,6 +25,7 @@ class App extends Component {
       this.setState({schools : data.schools})
     })
   }
+
   render() {
 
     const schoolRoutes = this.state.schools.map((e,index) =>{
@@ -35,7 +36,7 @@ class App extends Component {
       <main className="app">
       <Navigation/>
         <Switch>
-          <Route path="/" component={Home}/>
+          <Route exact path="/" component={Home}/>
           {schoolRoutes}
           <Route path="*" component={NotFound}/>
         </Switch>
