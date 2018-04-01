@@ -22,7 +22,6 @@ class App extends Component {
     const api = process.env.REACT_APP_SERVICE_URL;
     console.log(api);
     fetch(api).then(resp => resp.json()).then(data =>{
-      console.log(data)
       this.setState({schools : data.schools})
     })
   }
@@ -31,8 +30,6 @@ class App extends Component {
     const schoolRoutes = this.state.schools.map((e,index) =>{
       return <Route key={index} path={e.link} component={School} />
     })
-
-    console.log(schools)
 
     return (
       <main className="app">
