@@ -35,6 +35,9 @@ export default class Navigation extends Component {
     return (
       <nav className="navigation">
         <ul>
+          <li>
+            <Link to="/"> Home</Link>
+          </li>
           {urls}
         </ul>
       </nav>
