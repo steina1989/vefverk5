@@ -29,7 +29,7 @@ class App extends Component {
   render() {
 
     const schoolRoutes = this.state.schools.map((e,index) =>{
-      return <Route key={index} path={e.link} component={School} />
+      return <Route key={index} exact path={e.link} component={School} />
     })
 
     return (
