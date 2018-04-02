@@ -31,7 +31,7 @@ export default class Home extends Component {
 
     return (
       <div className="home">
-        <Helmet title="Stats" />
+        <Helmet title="Próftöflur" />
         <h1>Tölfræði</h1>
         <p>Fjöldi prófa: {numTests}</p>
         <p>Heildarfjöldi nemanda: {numStudents}</p>
