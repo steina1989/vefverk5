@@ -33,11 +33,11 @@ export default class Home extends Component {
       <div className="home">
         <Helmet title="Stats" />
         <h1>Tölfræði</h1>
-        <p>Min: {min}</p>
-        <p>Max: {max}</p>
-        <p>Number of tests: {numTests}</p>
-        <p>Number of Students: {numStudents}</p>
-        <p>Average number of Students: {averageStudents}</p>
+        <p>Fjöldi prófa: {numTests}</p>
+        <p>Heildarfjöldi nemanda: {numStudents}</p>
+        <p>Meðalfjöldi nemenda í prófi: {averageStudents}</p>
+        <p>Minnsti fjöldi nemenda í prófi: {min}</p>
+        <p>Mesti fjöldi nemenda í prófi: {max}</p>
       </div>
     );
   }
