@@ -1,4 +1,5 @@
-ul {
+
+.navigation ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -6,11 +7,11 @@ ul {
     background-color: #333;
 }
 
-li {
+.navigation li {
     float: left;
 }
 
-li a {
+.navigation li a {
     display: block;
     color: white;
     text-align: center;
@@ -18,6 +19,10 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
+.navigation li a:hover {
     background-color: #111;
+}
+
+.navigation h1 {
+    text-align: center;
 }
