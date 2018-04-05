@@ -1,1 +1,17 @@
-/* útfæra */
+.department table {
+    border-collapse: collapse;
+    width: 100%;
+    padding : 10px;
+}
+
+.department th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.department tr:nth-child(even){background-color: #eee}
+
+
+.department h1 {
+    padding: 10px
+}

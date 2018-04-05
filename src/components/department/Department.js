@@ -3,24 +3,24 @@ import PropTypes from 'prop-types';
 import './Department.css';
 
 
-export default class Department extends Component {
+export default class Department extends Component { 
 
-  constructor(props){
-    super(props)
-    this.state = {
-      visible : props.visible,
-      department : props.department
-    }
-  }
+  static propTypes = {
+    visible: PropTypes.bool,
+    tests: PropTypes.arrayOf(PropTypes.shape({
+      course: PropTypes.string,
+      name: PropTypes.string,
+      students: PropTypes.number,
+      date: PropTypes.string,
+    })).isRequired,
+    openDepartmentHandler: PropTypes.func
+}
 
   render() {
-    const { visible, department } = this.state;
-
-    const exams = visible ? department.tests : [];
-
-    const examElements = exams.map(e => {
+    const { visible, tests,heading, openDepartmentHandler,id } = this.props;
+    const examElements = tests.map((e,index) => {
       return (
-        <tr>
+        <tr key={index}>
           <td>{e.course}</td>
           <td>{e.name}</td>
           <td>{e.students}</td>
@@ -30,7 +30,10 @@ export default class Department extends Component {
     })
     return (
       <section className="department">
-        <h1>{department.heading}</h1>
+        <h1 onClick={e => openDepartmentHandler(id,e)}>
+         {heading}
+        </h1>
+        { visible && (
          <table>
            <tbody>
              <tr>
@@ -42,6 +45,7 @@ export default class Department extends Component {
             {examElements}
           </tbody>
         </table> 
+        )}
       </section>
     );
   }
