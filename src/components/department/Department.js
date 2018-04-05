@@ -16,8 +16,9 @@ export default class Department extends Component {
     openDepartmentHandler: PropTypes.func
 }
 
-  render() {
+  render() { 
     const { visible, tests,heading, openDepartmentHandler,id } = this.props;
+    const openSign = visible ? '- ' : '+ '
     const examElements = tests.map((e,index) => {
       return (
         <tr key={index}>
@@ -31,7 +32,7 @@ export default class Department extends Component {
     return (
       <section className="department">
         <h1 onClick={e => openDepartmentHandler(id,e)}>
-         {heading}
+         {openSign + heading}
         </h1>
         { visible && (
          <table>
@@ -46,6 +47,7 @@ export default class Department extends Component {
           </tbody>
         </table> 
         )}
+        <hr/>
       </section>
     );
   }
