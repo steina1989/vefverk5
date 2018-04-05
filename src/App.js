@@ -20,7 +20,6 @@ class App extends Component {
 
   componentDidMount() {
     const api = process.env.REACT_APP_SERVICE_URL;
-    console.log(api);
     fetch(api).then(resp => resp.json()).then(data =>{
       this.setState({schools : data.schools})
     })
