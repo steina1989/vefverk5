@@ -1,20 +1,47 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import './Department.css';
 
-/**
- * Þessi component ætti að vera einfaldur í birtingu en taka fall frá foreldri
- * sem keyrir þegar smellt er á fyrirsögn.
- */
 
-export default class Exams extends Component {
+export default class Department extends Component {
+
+  constructor(props){
+    super(props)
+    this.state = {
+      visible : props.visible,
+      department : props.department
+    }
+  }
 
   render() {
+    const { visible, department } = this.state;
 
+    const exams = visible ? department.tests : [];
+
+    const examElements = exams.map(e => {
+      return (
+        <tr>
+          <td>{e.course}</td>
+          <td>{e.name}</td>
+          <td>{e.students}</td>
+          <td>{e.date}</td>
+        </tr>
+      )
+    })
     return (
       <section className="department">
-        <p>útfæra</p>
+        <h1>{department.heading}</h1>
+         <table>
+           <tbody>
+             <tr>
+             <th>Auðkenni</th>
+             <th>Heiti námskeiðs</th>
+             <th>Fjöldi nemanda</th>
+             <th>Dagsetning</th>
+            </tr>
+            {examElements}
+          </tbody>
+        </table> 
       </section>
     );
   }

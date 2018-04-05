@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Department from '../department/Department';
 import path from 'path';
 import Helmet from 'react-helmet';
 import './School.css';
@@ -9,8 +10,7 @@ export default class School extends Component {
   constructor(props){
     super(props)
     this.state = {
-      school : null
-    }
+      school : null}
   }
 
   componentDidMount(){
@@ -25,13 +25,19 @@ export default class School extends Component {
 
     if (!this.state.school) return <h1>Sæki gögn...</h1>
 
+    const { departments } = this.state.school;
+
+    const departmentElements = departments.map((e,index)=> {
+      return (<Department key={index} visible department={e}/>);
+    })
+
     
 
     return (
       <section className="school">
         <Helmet title={this.state.school.heading} />
         <h1>{this.state.school.heading}</h1>
-
+        {departmentElements}
       </section>
     );
   }
