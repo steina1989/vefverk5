@@ -34,13 +34,13 @@ export default class Navigation extends Component {
 
     return (
       <nav className="navigation">
-      <h1>Próftöflur</h1>
-        <ul>
-          <li>
-            <Link to="/"> Home</Link>
-          </li>
-          {urls}
-        </ul>
+        <h1>Próftöflur</h1>
+          <ul>
+            <li>
+              <Link to="/"> Home</Link>
+            </li>
+            {urls}
+          </ul>
       </nav>
     );
   }
