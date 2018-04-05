@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 import './Navigation.css';
 
@@ -27,7 +26,7 @@ export default class Navigation extends Component {
     const urls = this.state.urls.map((e,index)=>{
       return (
         <li key={index}>
-          <Link to={e.link}>{e.name}</Link>
+          <NavLink to={e.link} activeclassname="active">{e.name}</NavLink>
         </li>
       )})
 
@@ -37,7 +36,7 @@ export default class Navigation extends Component {
         <h1>Próftöflur</h1>
           <ul>
             <li>
-              <Link to="/"> Home</Link>
+              <NavLink exact to="/" activeclassname="active"> Home</NavLink>
             </li>
             {urls}
           </ul>

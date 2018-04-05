@@ -22,6 +22,10 @@
     color : red;
 }
 
+.active {
+    font-weight :bold;
+}
+
 .navigation h1 {
     text-align: center;
 }

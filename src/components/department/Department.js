@@ -32,7 +32,7 @@ export default class Department extends Component {
     return (
       <section className="department">
         <h1 onClick={e => openDepartmentHandler(id,e)}>
-         {openSign + heading}
+         {openSign}{heading}
         </h1>
         { visible && (
          <table>
